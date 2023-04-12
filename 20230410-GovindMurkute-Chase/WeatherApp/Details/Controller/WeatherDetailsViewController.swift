@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Foundation
+import SwiftUI
 
 class WeatherDetailsViewController: UIViewController {
 
@@ -16,6 +18,7 @@ class WeatherDetailsViewController: UIViewController {
     @IBOutlet weak var weatherSubtitle: UILabel!
     @IBOutlet weak var minTemp: UILabel!
     @IBOutlet weak var maxTemp: UILabel!
+    @IBOutlet weak var coordinatesButton: UIButton!
 
     var coordinator: MVVMCoordinator?
     var viewModel = WeatherInfoViewModel()
@@ -37,6 +40,12 @@ class WeatherDetailsViewController: UIViewController {
     private func saveLastSearch() {
         UserDefaults.standard.set(self.viewModel.location?.lat, forKey: "lat")
         UserDefaults.standard.set(self.viewModel.location?.lon, forKey: "lon")
+    }
+    
+    
+    @IBAction func coordinatesDetails(_ sender: UIButton) {
+        let coordinatesView = UIHostingController(rootView: CoordinatesView(latitude: String(format: "%f", viewModel.location?.lat ?? 0.0), longitude: String(format: "%f", viewModel.location?.lon ?? 0.0)))
+        coordinator?.navigationController.pushViewController(coordinatesView, animated: true)
     }
 }
 

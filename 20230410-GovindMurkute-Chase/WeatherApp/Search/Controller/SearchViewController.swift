@@ -25,6 +25,7 @@ class SearchViewController: UIViewController {
         errorMessageLabel.isHidden = true
         configureTableView()
         locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
         handleAutoWeather()
     }
     
@@ -52,7 +53,6 @@ class SearchViewController: UIViewController {
             }
             
         case .authorizedAlways, .authorizedWhenInUse:
-            locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
             
         @unknown default:
