@@ -7,21 +7,28 @@
 
 import Foundation
 
-enum Result<T> {
-    case success(T)
-    case failure(Error)
-    case empty
+enum Result {
+    case success(Data, HTTPURLResponse)
+    case failure(NetworkError, HTTPURLResponse)
 }
 
 class ServiceProvider<T: Service> {
     var urlSession = URLSession.shared
 
     init() { }
-
-    func load(service: T, completion: @escaping (Result<Data>) -> Void) {
+    
+    /// Common API method to call open weather APIs
+    /// - Parameters:
+    ///   - service: URL request
+    ///   - completion: Return result on completion
+    func load(service: T, completion: @escaping (Result) -> Void) {
         call(service.urlRequest, completion: completion)
     }
     
+    /// Image downloader from service
+    /// - Parameters:
+    ///   - url: Image URL
+    ///   - completion: Return image data.
     func getWeatherImage(url: URL, completion: @escaping (Data?, Error?) -> Void) {
         weatherImageCall(url: url, completion: completion)
     }
@@ -29,19 +36,25 @@ class ServiceProvider<T: Service> {
 
 extension ServiceProvider {
     
-    private func call(_ request: URLRequest, deliverQueue: DispatchQueue = DispatchQueue.main, completion: @escaping (Result<Data>) -> Void) {
-        urlSession.dataTask(with: request) { (data, _, error) in
-            if let error = error {
-                deliverQueue.async {
-                    completion(.failure(error))
-                }
-            } else if let data = data {
-                deliverQueue.async {
-                    completion(.success(data))
-                }
-            } else {
-                deliverQueue.async {
-                    completion(.empty)
+    private func call(_ request: URLRequest, deliverQueue: DispatchQueue = DispatchQueue.main, completion: @escaping (Result) -> Void) {
+        urlSession.dataTask(with: request) { (data, response, error) in
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                
+                if let networkError = NetworkError(data: data, response: response, error: error) {
+                    deliverQueue.async {
+                        completion(.failure(networkError, httpResponse))
+                    }
+                } else {
+                    if let data = data {
+                        deliverQueue.async {
+                            completion(.success(data, httpResponse))
+                        }
+                    } else {
+                        deliverQueue.async {
+                            completion(.failure(.noData, httpResponse))
+                        }
+                    }
                 }
             }
         }.resume()

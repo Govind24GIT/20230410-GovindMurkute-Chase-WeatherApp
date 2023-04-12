@@ -8,10 +8,11 @@
 import UIKit
 import CoreLocation
 
-class SearchViewController: UIViewController, CLLocationManagerDelegate {
+class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var errorMessageLabel: UILabel!
 
     var coordinator: MVVMCoordinator?
     var viewModel = SearchViewModel()
@@ -21,6 +22,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
 
         self.title = "Search Weather for City"
+        errorMessageLabel.isHidden = true
         configureTableView()
         locationManager.delegate = self
         handleAutoWeather()
@@ -31,21 +33,12 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
         tableView.register(cell, forCellReuseIdentifier: "SearchCell")
         
         viewModel.reloadUI = { [weak self] in
+            self?.handleAPIDataErrors()
             self?.tableView.reloadData()
         }
     }
     
-    func locationManager(_ manager: CLLocationManager,
-                         didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            let lat = location.coordinate.latitude
-            let long = location.coordinate.longitude
-
-            let location = GeoLocationModel(name: nil, country: nil, state: nil, lat: lat, lon: long)
-            coordinator?.showWeatherDetails(for: location)
-        }
-    }
-    
+/// Handle default weather showing conditions
     private func handleAutoWeather() {
         
         switch locationManager.authorizationStatus {
@@ -66,8 +59,23 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
             break
         }
     }
+    
+/// Handle search API response errors
+    private func handleAPIDataErrors() {
+        if let error =  viewModel.errorMessage {
+            errorMessageLabel.isHidden = false
+            errorMessageLabel.text = error
+        } else
+        if viewModel.geoLocationList?.count == 0 && searchBar.text?.count ?? 0 > 0 {
+            errorMessageLabel.isHidden = false
+            errorMessageLabel.text = "No data found"
+        } else {
+            errorMessageLabel.isHidden = true
+        }
+    }
 }
 
+// MARK: - SearchBarDelegate
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -75,6 +83,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: - TableViewDelegate
 extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -89,7 +98,7 @@ extension SearchViewController: UITableViewDelegate {
     }
 }
 
-
+// MARK: - TableViewDataSource
 extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,5 +123,20 @@ extension SearchViewController: UITableViewDataSource {
         }
 
         return cell ?? UITableViewCell()
+    }
+}
+
+// MARK: - ocationManagerDelegate
+extension SearchViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager,
+                         didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            let lat = location.coordinate.latitude
+            let long = location.coordinate.longitude
+
+            let location = GeoLocationModel(name: nil, country: nil, state: nil, lat: lat, lon: long)
+            coordinator?.showWeatherDetails(for: location)
+        }
     }
 }

@@ -9,7 +9,10 @@ import Foundation
 import UIKit
 
 protocol WeatherViewModelDelegate {
+/// Triggers when Weather API call get fininshed.
     func weatherLoaded()
+    
+/// Triggers when Weather icon fetch finished.
     func weatherIconData(image: UIImage)
 }
 
@@ -31,9 +34,9 @@ class WeatherInfoViewModel {
         }
     }
 
+///  Fetch weather details from server by providing lon & lat got from geo API call.
     private func fetchWeather() {
         
-        // Make API call
         let lan = String(format: "%f", location?.lat ?? 0.0)
         let long = String(format: "%f", location?.lon ?? 0.0)
         provider.load(service: .getWeather(lat: lan, long: long)) { [weak self] result in
@@ -41,21 +44,18 @@ class WeatherInfoViewModel {
             guard let self = self else { return }
             switch result {
                 
-            case .success(let response):
+            case .success(let data, _):
                 let decoder = JSONDecoder()
-                // Populating Weather info
-                self.weatherInfo = try? decoder.decode(WeatherInfo.self, from: response)
+                self.weatherInfo = try? decoder.decode(WeatherInfo.self, from: data)
                 self.delegate?.weatherLoaded()
                 
-            case .failure(let error):
-                print(error.localizedDescription)
-                
-            case .empty:
-                print("No data")
+            case .failure(let error, _):
+                print(error)
             }
         }
     }
     
+/// Fetch weather condition icon from open weather service and cache it.
     private func fetchWeatherIcon() {
         guard let url = imageUrl else { return }
         

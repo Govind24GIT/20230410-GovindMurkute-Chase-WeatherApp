@@ -10,11 +10,12 @@ import Foundation
 enum WearhterService {
     case geoSearch(city: String)
     case getWeather(lat: String, long: String)
+    /// We can add additional API paths here if any
 }
 
 extension WearhterService: Service {
     
-    static let apiKey = "b68cdaa6e616015ab5811411b49107f6"
+    static let apiKey = "b68cdaa6e616015ab5811411b49107f6"  /// App id from openweather account
     static let unit = "metric"
     
     var baseURL: String {

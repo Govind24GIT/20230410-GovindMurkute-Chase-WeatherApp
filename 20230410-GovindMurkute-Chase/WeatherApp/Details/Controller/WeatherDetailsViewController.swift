@@ -14,6 +14,8 @@ class WeatherDetailsViewController: UIViewController {
     @IBOutlet weak var temperatureText: UILabel!
     @IBOutlet weak var weatherTitle: UILabel!
     @IBOutlet weak var weatherSubtitle: UILabel!
+    @IBOutlet weak var minTemp: UILabel!
+    @IBOutlet weak var maxTemp: UILabel!
 
     var coordinator: MVVMCoordinator?
     var viewModel = WeatherInfoViewModel()
@@ -22,42 +24,47 @@ class WeatherDetailsViewController: UIViewController {
         super.viewDidLoad()
         
     }
-
+    
+///  Passing the location with coordinates from geo search API on table row selection
     func setLocation(with location: GeoLocationModel) {
         self.viewModel.delegate = self
         self.viewModel.location = location
         self.title = "Weather"
-        savelastSearch()
+        saveLastSearch()
     }
     
-    private func savelastSearch() {
+///     Persisting coordinates of last searched location
+    private func saveLastSearch() {
         UserDefaults.standard.set(self.viewModel.location?.lat, forKey: "lat")
         UserDefaults.standard.set(self.viewModel.location?.lon, forKey: "lon")
     }
 }
 
+// MARK: - WeatherViewModelDelegate
 extension WeatherDetailsViewController: WeatherViewModelDelegate {
     
     func weatherLoaded() {
-        
-        guard let weather = viewModel.weatherInfo else { return }
-        self.cityLabel.text = weather.name
-        self.weatherTitle.text = weather.weather?.first?.main
-        self.weatherSubtitle.text = weather.weather?.first?.description
-        guard let temperature = weather.main?.temp else { return }
+        guard let weatherInfo = viewModel.weatherInfo else { return }
+        self.cityLabel.text = weatherInfo.name
+        self.weatherTitle.text = weatherInfo.weather?.first?.main
+        self.weatherSubtitle.text = weatherInfo.weather?.first?.description
+        guard let temperature = weatherInfo.main?.temp,
+              let minTemp = weatherInfo.main?.temp_min,
+              let maxTemp = weatherInfo.main?.temp_max else { return }
         self.temperatureText.text = String(describing: temperature) + " °C"
-        
-        if let icon = weather.weather?.first?.icon,
+        self.minTemp.text = "Min Temp:   " + String(describing: minTemp)
+        self.maxTemp.text = "Max Temp:   " + String(describing: maxTemp)
+
+        if let icon = weatherInfo.weather?.first?.icon,
            let imageUrl = URL(string: "https://openweathermap.org/img/wn/\(String(describing: icon))@2x.png") {
             
             self.viewModel.imageUrl = imageUrl
         }
     }
-    
+
+/// Setting weather image to imageview callback
     func weatherIconData(image: UIImage) {
-        
         DispatchQueue.main.async {
-            // set Image
             self.weatherIcon.image = image
         }
     }

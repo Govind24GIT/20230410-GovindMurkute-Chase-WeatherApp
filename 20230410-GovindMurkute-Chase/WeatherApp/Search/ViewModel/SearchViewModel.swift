@@ -9,6 +9,7 @@ import Foundation
 
 class SearchViewModel {
     var geoLocationList: [GeoLocationModel]?
+    var errorMessage: String?
     let provider = ServiceProvider<WearhterService>()
 
     var reloadUI: () -> Void = { }
@@ -18,6 +19,7 @@ class SearchViewModel {
         }
     }
 
+/// Call to GeoCoder api to get coordinates of location passed.
     func performSearch(text: String) {
         guard !text.isEmpty else {
             self.geoLocationList?.removeAll()
@@ -26,23 +28,21 @@ class SearchViewModel {
         }
         isLoading = true
         
-        // Make API call
         provider.load(service: .geoSearch(city: text)) { [weak self] result in
             
             guard let self = self else { return }
             switch result {
                 
-            case .success(let response):
+            case .success(let data, _):
                 let decoder = JSONDecoder()
-                // Populating ResultList variable
-                self.geoLocationList = try? decoder.decode([GeoLocationModel].self, from: response)
+                self.geoLocationList = try? decoder.decode([GeoLocationModel].self, from: data)
                 self.isLoading = false
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-                
-            case .empty:
-                print("No data")
+                self.errorMessage = nil
+
+            case .failure(let error, _):
+                print(error)
+                self.errorMessage = error.localizedDescription
+                self.isLoading = false
             }
         }
     }

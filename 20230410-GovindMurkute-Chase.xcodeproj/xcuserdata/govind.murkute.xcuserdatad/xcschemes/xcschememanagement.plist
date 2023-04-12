@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>20230410-GovindMurkute-ChaseTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>CB6D755F29E4A9F600DB489C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB6D757529E4A9F700DB489C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB6D757F29E4A9F700DB489C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

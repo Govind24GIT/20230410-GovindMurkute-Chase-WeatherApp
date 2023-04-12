@@ -23,8 +23,8 @@ struct Main: Codable {
     let humidity: Int?
     let pressure: Int?
     let temp: Float?
-    let tempMax: Float?
-    let tempMin: Float?
+    let temp_max: Float?
+    let temp_min: Float?
 }
 
 struct Weather: Codable {

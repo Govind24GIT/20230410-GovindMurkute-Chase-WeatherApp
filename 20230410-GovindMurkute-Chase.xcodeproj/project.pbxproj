@@ -11,11 +11,14 @@
 		CB12A54729E5D69700D46259 /* KeyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A54629E5D69700D46259 /* KeyWrapper.swift */; };
 		CB12A54929E5D6AB00D46259 /* ObjectWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A54829E5D6AB00D46259 /* ObjectWrapper.swift */; };
 		CB12A54B29E5D6C000D46259 /* AppCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A54A29E5D6C000D46259 /* AppCache.swift */; };
+		CB12A54E29E6A07800D46259 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A54D29E6A07800D46259 /* SearchViewModelTests.swift */; };
+		CB12A55029E6A1CD00D46259 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D75BB29E565F700DB489C /* WeatherDetailsViewController.swift */; };
+		CB12A55329E6A5E500D46259 /* ServiceProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A55229E6A5E500D46259 /* ServiceProviderTests.swift */; };
+		CB12A55529E6B63500D46259 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12A55429E6B63500D46259 /* NetworkError.swift */; };
 		CB6D756429E4A9F600DB489C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D756329E4A9F600DB489C /* AppDelegate.swift */; };
 		CB6D756B29E4A9F600DB489C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB6D756929E4A9F600DB489C /* Main.storyboard */; };
 		CB6D756D29E4A9F700DB489C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB6D756C29E4A9F700DB489C /* Assets.xcassets */; };
 		CB6D757029E4A9F700DB489C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB6D756E29E4A9F700DB489C /* LaunchScreen.storyboard */; };
-		CB6D757B29E4A9F700DB489C /* _0230410_GovindMurkute_ChaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D757A29E4A9F700DB489C /* _0230410_GovindMurkute_ChaseTests.swift */; };
 		CB6D758529E4A9F700DB489C /* _0230410_GovindMurkute_ChaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D758429E4A9F700DB489C /* _0230410_GovindMurkute_ChaseUITests.swift */; };
 		CB6D758729E4A9F700DB489C /* _0230410_GovindMurkute_ChaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D758629E4A9F700DB489C /* _0230410_GovindMurkute_ChaseUITestsLaunchTests.swift */; };
 		CB6D759529E4AB1F00DB489C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D759429E4AB1F00DB489C /* Coordinator.swift */; };
@@ -30,7 +33,6 @@
 		CB6D75B329E5292200DB489C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D75B229E5292200DB489C /* Service.swift */; };
 		CB6D75B529E5326600DB489C /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D75B429E5326600DB489C /* ServiceProvider.swift */; };
 		CB6D75B729E533B300DB489C /* WearhterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D75B629E533B300DB489C /* WearhterService.swift */; };
-		CB6D75BD29E565F700DB489C /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D75BB29E565F700DB489C /* WeatherDetailsViewController.swift */; };
 		CB6D75BE29E565F700DB489C /* WeatherDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6D75BC29E565F700DB489C /* WeatherDetailsViewController.xib */; };
 		CB6D75C129E568B300DB489C /* WeatherInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D75C029E568B300DB489C /* WeatherInfoViewModel.swift */; };
 		CB6D75C429E5695400DB489C /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D75C329E5695400DB489C /* WeatherInfo.swift */; };
@@ -58,14 +60,16 @@
 		CB12A54629E5D69700D46259 /* KeyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWrapper.swift; sourceTree = "<group>"; };
 		CB12A54829E5D6AB00D46259 /* ObjectWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectWrapper.swift; sourceTree = "<group>"; };
 		CB12A54A29E5D6C000D46259 /* AppCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCache.swift; sourceTree = "<group>"; };
-		CB6D756029E4A9F600DB489C /* 20230410-GovindMurkute-Chase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20230410-GovindMurkute-Chase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB12A54D29E6A07800D46259 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
+		CB12A55229E6A5E500D46259 /* ServiceProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderTests.swift; sourceTree = "<group>"; };
+		CB12A55429E6B63500D46259 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		CB6D756029E4A9F600DB489C /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6D756329E4A9F600DB489C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB6D756A29E4A9F600DB489C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB6D756C29E4A9F700DB489C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB6D756F29E4A9F700DB489C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB6D757129E4A9F700DB489C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB6D757629E4A9F700DB489C /* 20230410-GovindMurkute-ChaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "20230410-GovindMurkute-ChaseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB6D757A29E4A9F700DB489C /* _0230410_GovindMurkute_ChaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0230410_GovindMurkute_ChaseTests.swift; sourceTree = "<group>"; };
 		CB6D758029E4A9F700DB489C /* 20230410-GovindMurkute-ChaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "20230410-GovindMurkute-ChaseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6D758429E4A9F700DB489C /* _0230410_GovindMurkute_ChaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0230410_GovindMurkute_ChaseUITests.swift; sourceTree = "<group>"; };
 		CB6D758629E4A9F700DB489C /* _0230410_GovindMurkute_ChaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0230410_GovindMurkute_ChaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -123,6 +127,22 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		CB12A54C29E6A03500D46259 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CB12A54D29E6A07800D46259 /* SearchViewModelTests.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CB12A55129E6A5C300D46259 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CB12A55229E6A5E500D46259 /* ServiceProviderTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		CB6D755729E4A9F600DB489C = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +156,7 @@
 		CB6D756129E4A9F600DB489C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB6D756029E4A9F600DB489C /* 20230410-GovindMurkute-Chase.app */,
+				CB6D756029E4A9F600DB489C /* WeatherApp.app */,
 				CB6D757629E4A9F700DB489C /* 20230410-GovindMurkute-ChaseTests.xctest */,
 				CB6D758029E4A9F700DB489C /* 20230410-GovindMurkute-ChaseUITests.xctest */,
 			);
@@ -162,7 +182,8 @@
 		CB6D757929E4A9F700DB489C /* 20230410-GovindMurkute-ChaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				CB6D757A29E4A9F700DB489C /* _0230410_GovindMurkute_ChaseTests.swift */,
+				CB12A55129E6A5C300D46259 /* Service */,
+				CB12A54C29E6A03500D46259 /* Search */,
 			);
 			path = "20230410-GovindMurkute-ChaseTests";
 			sourceTree = "<group>";
@@ -254,6 +275,7 @@
 				CB6D75B229E5292200DB489C /* Service.swift */,
 				CB6D75B429E5326600DB489C /* ServiceProvider.swift */,
 				CB6D75B629E533B300DB489C /* WearhterService.swift */,
+				CB12A55429E6B63500D46259 /* NetworkError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -296,9 +318,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CB6D755F29E4A9F600DB489C /* 20230410-GovindMurkute-Chase */ = {
+		CB6D755F29E4A9F600DB489C /* WeatherApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB6D758A29E4A9F700DB489C /* Build configuration list for PBXNativeTarget "20230410-GovindMurkute-Chase" */;
+			buildConfigurationList = CB6D758A29E4A9F700DB489C /* Build configuration list for PBXNativeTarget "WeatherApp" */;
 			buildPhases = (
 				CB6D755C29E4A9F600DB489C /* Sources */,
 				CB6D755D29E4A9F600DB489C /* Frameworks */,
@@ -308,9 +330,9 @@
 			);
 			dependencies = (
 			);
-			name = "20230410-GovindMurkute-Chase";
+			name = WeatherApp;
 			productName = "20230410-GovindMurkute-Chase";
-			productReference = CB6D756029E4A9F600DB489C /* 20230410-GovindMurkute-Chase.app */;
+			productReference = CB6D756029E4A9F600DB489C /* WeatherApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CB6D757529E4A9F700DB489C /* 20230410-GovindMurkute-ChaseTests */ = {
@@ -385,7 +407,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB6D755F29E4A9F600DB489C /* 20230410-GovindMurkute-Chase */,
+				CB6D755F29E4A9F600DB489C /* WeatherApp */,
 				CB6D757529E4A9F700DB489C /* 20230410-GovindMurkute-ChaseTests */,
 				CB6D757F29E4A9F700DB489C /* 20230410-GovindMurkute-ChaseUITests */,
 			);
@@ -432,7 +454,6 @@
 				CB6D75B329E5292200DB489C /* Service.swift in Sources */,
 				CB6D759D29E4AC2B00DB489C /* SearchViewController.swift in Sources */,
 				CB12A54929E5D6AB00D46259 /* ObjectWrapper.swift in Sources */,
-				CB6D75BD29E565F700DB489C /* WeatherDetailsViewController.swift in Sources */,
 				CB12A54729E5D69700D46259 /* KeyWrapper.swift in Sources */,
 				CB6D75AF29E4BE7100DB489C /* ListTableViewCell.swift in Sources */,
 				CB12A54B29E5D6C000D46259 /* AppCache.swift in Sources */,
@@ -442,9 +463,11 @@
 				CB6D75B529E5326600DB489C /* ServiceProvider.swift in Sources */,
 				CB6D756429E4A9F600DB489C /* AppDelegate.swift in Sources */,
 				CB6D75B729E533B300DB489C /* WearhterService.swift in Sources */,
+				CB12A55029E6A1CD00D46259 /* WeatherDetailsViewController.swift in Sources */,
 				CB6D75C129E568B300DB489C /* WeatherInfoViewModel.swift in Sources */,
 				CB6D75A729E4AFE600DB489C /* UIViewController+LoadFromNib.swift in Sources */,
 				CB6D759829E4ABA600DB489C /* MVVMCoordinator.swift in Sources */,
+				CB12A55529E6B63500D46259 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +475,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB6D757B29E4A9F700DB489C /* _0230410_GovindMurkute_ChaseTests.swift in Sources */,
+				CB12A55329E6A5E500D46259 /* ServiceProviderTests.swift in Sources */,
+				CB12A54E29E6A07800D46259 /* SearchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,12 +494,12 @@
 /* Begin PBXTargetDependency section */
 		CB6D757829E4A9F700DB489C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CB6D755F29E4A9F600DB489C /* 20230410-GovindMurkute-Chase */;
+			target = CB6D755F29E4A9F600DB489C /* WeatherApp */;
 			targetProxy = CB6D757729E4A9F700DB489C /* PBXContainerItemProxy */;
 		};
 		CB6D758229E4A9F700DB489C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CB6D755F29E4A9F600DB489C /* 20230410-GovindMurkute-Chase */;
+			target = CB6D755F29E4A9F600DB489C /* WeatherApp */;
 			targetProxy = CB6D758129E4A9F700DB489C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -623,6 +647,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "20230410-GovindMurkute-Chase/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app uses your location to personalize your app experience.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app uses your location to personalize your app experience.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -650,6 +676,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "20230410-GovindMurkute-Chase/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app uses your location to personalize your app experience.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app uses your location to personalize your app experience.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -683,7 +711,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/20230410-GovindMurkute-Chase.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/20230410-GovindMurkute-Chase";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WeatherApp";
 			};
 			name = Debug;
 		};
@@ -702,7 +730,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/20230410-GovindMurkute-Chase.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/20230410-GovindMurkute-Chase";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WeatherApp";
 			};
 			name = Release;
 		};
@@ -752,7 +780,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB6D758A29E4A9F700DB489C /* Build configuration list for PBXNativeTarget "20230410-GovindMurkute-Chase" */ = {
+		CB6D758A29E4A9F700DB489C /* Build configuration list for PBXNativeTarget "WeatherApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB6D758B29E4A9F700DB489C /* Debug */,

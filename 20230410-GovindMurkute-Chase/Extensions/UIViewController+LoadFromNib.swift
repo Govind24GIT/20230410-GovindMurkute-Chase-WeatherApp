@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+/// Common function to load nib from bundle
     static func initFromNib() -> Self {
         return Self.init(nibName: String(describing: self), bundle: .main)
     }
