@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="_0230410_GovindMurkute_Chase" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="0JT-ti-peg" id="Z3b-3Q-BeC"/>
+                <outlet property="tableView" destination="Vxm-fD-0fZ" id="VIf-P7-dba"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vxm-fD-0fZ">
+                    <rect key="frame" x="0.0" y="104" width="393" height="748"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="zho-jK-9lc"/>
+                        <outlet property="delegate" destination="-1" id="9bF-7w-zN2"/>
+                    </connections>
+                </tableView>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="0JT-ti-peg">
+                    <rect key="frame" x="0.0" y="48" width="393" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="ct4-Wg-NQc"/>
+                    </connections>
+                </searchBar>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="0JT-ti-peg" secondAttribute="top" constant="11" id="6AW-wN-SpM"/>
+                <constraint firstItem="Vxm-fD-0fZ" firstAttribute="top" secondItem="0JT-ti-peg" secondAttribute="bottom" id="BOe-RM-GkE"/>
+                <constraint firstItem="0JT-ti-peg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CcV-kP-8AR"/>
+                <constraint firstAttribute="bottom" secondItem="Vxm-fD-0fZ" secondAttribute="bottom" id="EnN-wl-EF4"/>
+                <constraint firstAttribute="trailing" secondItem="0JT-ti-peg" secondAttribute="trailing" id="d0m-5e-zwu"/>
+                <constraint firstItem="Vxm-fD-0fZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="f17-H2-Xtb"/>
+                <constraint firstAttribute="trailing" secondItem="Vxm-fD-0fZ" secondAttribute="trailing" id="qD5-Zc-Drr"/>
+            </constraints>
+            <point key="canvasLocation" x="110.68702290076335" y="17.605633802816904"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
