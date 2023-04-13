@@ -20,7 +20,7 @@ class WeatherDetailsViewController: UIViewController {
     @IBOutlet weak var coordinatesButton: UIButton!
 
     var coordinator: MVVMCoordinator?
-    var viewModel = WeatherInfoViewModel()
+    var viewModel = WeatherInfoViewModel(provider: ServiceProvider<WearhterService>())
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -18,13 +18,13 @@ protocol WeatherViewModelDelegate {
 
 class WeatherInfoViewModel {
     
-    let provider = ServiceProvider<WearhterService>()
+    let provider: any ServiceProviderProtocol<WearhterService>
     var delegate: WeatherViewModelDelegate?
     var weatherInfo: WeatherInfo?
-    
+
     var location: GeoLocationModel? {
         didSet {
-            self.fetchWeather()
+            self.fetchWeather(completion: { })
         }
     }
     
@@ -34,8 +34,12 @@ class WeatherInfoViewModel {
         }
     }
 
+    init(provider: any ServiceProviderProtocol<WearhterService>) {
+        self.provider = provider
+    }
+    
 ///  Fetch weather details from server by providing lon & lat got from geo API call.
-    private func fetchWeather() {
+    func fetchWeather(completion: @escaping (() -> ())) {
         
         let lan = (location?.lat ?? 0.0).stringValue()
         let long = (location?.lon ?? 0.0).stringValue()
@@ -48,8 +52,10 @@ class WeatherInfoViewModel {
                 let decoder = JSONDecoder()
                 self.weatherInfo = try? decoder.decode(WeatherInfo.self, from: data)
                 self.delegate?.weatherLoaded()
+                completion()
                 
             case .failure(let error, _):
+                completion()
                 print(error)
             }
         }

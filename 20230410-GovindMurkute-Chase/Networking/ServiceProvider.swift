@@ -12,7 +12,13 @@ enum Result {
     case failure(NetworkError, HTTPURLResponse)
 }
 
-class ServiceProvider<T: Service> {
+protocol ServiceProviderProtocol<T> {
+    associatedtype T: Service
+    func load(service: T, completion: @escaping (Result) -> Void)
+    func getWeatherImage(url: URL, completion: @escaping (Data?, Error?) -> Void)
+}
+
+class ServiceProvider<T: Service>: ServiceProviderProtocol {
     var urlSession = URLSession.shared
 
     init() { }
