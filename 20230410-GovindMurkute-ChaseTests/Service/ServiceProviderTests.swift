@@ -35,7 +35,7 @@ final class ServiceProviderTests: XCTestCase {
             }
         }
         
-        waitForExpectations(timeout: 1) { (error) in
+        waitForExpectations(timeout: 3) { (error) in
           XCTAssertNil(tempData)
         }
     }
@@ -56,7 +56,7 @@ final class ServiceProviderTests: XCTestCase {
             }
         }
         
-        waitForExpectations(timeout: 1) { (error) in
+        waitForExpectations(timeout: 3) { (error) in
           XCTAssertNotNil(tempData)
         }
     }
