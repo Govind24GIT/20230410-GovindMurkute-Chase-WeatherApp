@@ -41,6 +41,7 @@ extension WearhterService: Service {
             
         case .geoSearch(city: let city):
             params["q"] = city.replacingOccurrences(of: " ", with: "")
+            params["limit"] = "\(10)"
             
         case .getWeather(lat: let lat, long: let long):
             params["lat"] = lat
