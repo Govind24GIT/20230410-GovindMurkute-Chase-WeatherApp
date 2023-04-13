@@ -7,7 +7,6 @@
 
 import UIKit
 import Foundation
-import SwiftUI
 
 class WeatherDetailsViewController: UIViewController {
 
@@ -42,10 +41,8 @@ class WeatherDetailsViewController: UIViewController {
         UserDefaults.standard.set(self.viewModel.location?.lon, forKey: "lon")
     }
     
-    
     @IBAction func coordinatesDetails(_ sender: UIButton) {
-        let coordinatesView = UIHostingController(rootView: CoordinatesView(latitude: String(format: "%f", viewModel.location?.lat ?? 0.0), longitude: String(format: "%f", viewModel.location?.lon ?? 0.0)))
-        coordinator?.navigationController.pushViewController(coordinatesView, animated: true)
+        coordinator?.showCoordinateDetails(latitude: (viewModel.location?.lat ?? 0.0).stringValue(), longitude: (viewModel.location?.lon ?? 0.0).stringValue())
     }
 }
 

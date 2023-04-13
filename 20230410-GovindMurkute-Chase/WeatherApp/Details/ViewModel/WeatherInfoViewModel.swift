@@ -37,8 +37,8 @@ class WeatherInfoViewModel {
 ///  Fetch weather details from server by providing lon & lat got from geo API call.
     private func fetchWeather() {
         
-        let lan = String(format: "%f", location?.lat ?? 0.0)
-        let long = String(format: "%f", location?.lon ?? 0.0)
+        let lan = (location?.lat ?? 0.0).stringValue()
+        let long = (location?.lon ?? 0.0).stringValue()
         provider.load(service: .getWeather(lat: lan, long: long)) { [weak self] result in
             
             guard let self = self else { return }

@@ -37,6 +37,7 @@
 		CB6D75BE29E565F700DB489C /* WeatherDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6D75BC29E565F700DB489C /* WeatherDetailsViewController.xib */; };
 		CB6D75C129E568B300DB489C /* WeatherInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D75C029E568B300DB489C /* WeatherInfoViewModel.swift */; };
 		CB6D75C429E5695400DB489C /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D75C329E5695400DB489C /* WeatherInfo.swift */; };
+		CBE3706B29E7BB2500DFFAE1 /* Double+StringValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE3706A29E7BB2500DFFAE1 /* Double+StringValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		CB6D75BC29E565F700DB489C /* WeatherDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherDetailsViewController.xib; sourceTree = "<group>"; };
 		CB6D75C029E568B300DB489C /* WeatherInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoViewModel.swift; sourceTree = "<group>"; };
 		CB6D75C329E5695400DB489C /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		CBE3706A29E7BB2500DFFAE1 /* Double+StringValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+StringValue.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				CB6D75A629E4AFE600DB489C /* UIViewController+LoadFromNib.swift */,
+				CBE3706A29E7BB2500DFFAE1 /* Double+StringValue.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				CB12A54B29E5D6C000D46259 /* AppCache.swift in Sources */,
 				CB6D75A129E4AE8E00DB489C /* SearchViewModel.swift in Sources */,
 				CB6D759529E4AB1F00DB489C /* Coordinator.swift in Sources */,
+				CBE3706B29E7BB2500DFFAE1 /* Double+StringValue.swift in Sources */,
 				CB6D75A429E4AEDB00DB489C /* GeoLocationModel.swift in Sources */,
 				CB6D75B529E5326600DB489C /* ServiceProvider.swift in Sources */,
 				CB6D756429E4A9F600DB489C /* AppDelegate.swift in Sources */,

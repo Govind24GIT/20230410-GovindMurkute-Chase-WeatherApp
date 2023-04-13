@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class MVVMCoordinator: Coordinator {
     var coordinator: [Coordinator] = []
@@ -26,5 +27,10 @@ final class MVVMCoordinator: Coordinator {
         weatherDetailVC.setLocation(with: location)
         weatherDetailVC.coordinator = self
         navigationController.pushViewController(weatherDetailVC, animated: true)
+    }
+    
+    func showCoordinateDetails(latitude: String, longitude: String) {
+        let coordinatesView = UIHostingController(rootView: CoordinatesView(latitude: latitude, longitude: latitude))
+        navigationController.pushViewController(coordinatesView, animated: true)
     }
 }
