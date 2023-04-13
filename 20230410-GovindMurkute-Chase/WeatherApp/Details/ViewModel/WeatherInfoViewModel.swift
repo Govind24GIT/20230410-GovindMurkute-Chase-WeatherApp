@@ -43,14 +43,13 @@ class WeatherInfoViewModel {
         
         let lan = (location?.lat ?? 0.0).stringValue()
         let long = (location?.lon ?? 0.0).stringValue()
-        provider.load(service: .getWeather(lat: lan, long: long)) { [weak self] result in
+        provider.load(type: WeatherInfo.self, service: .getWeather(lat: lan, long: long)) { [weak self] result in
             
             guard let self = self else { return }
             switch result {
                 
             case .success(let data, _):
-                let decoder = JSONDecoder()
-                self.weatherInfo = try? decoder.decode(WeatherInfo.self, from: data)
+                self.weatherInfo = data
                 self.delegate?.weatherLoaded()
                 completion()
                 

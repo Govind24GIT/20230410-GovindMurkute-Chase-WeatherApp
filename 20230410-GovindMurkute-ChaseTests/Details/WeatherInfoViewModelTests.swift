@@ -12,11 +12,12 @@ import Foundation
 final class WeatherInfoViewModelTests: XCTestCase {
     
     private var viewModel: WeatherInfoViewModel!
-    private var mockService: MockServiceProvider<WearhterService>!
+    private var mockService: MockServiceProvider<WearhterService, WeatherInfo>!
     
     override func setUp() {
         super.setUp()
-        mockService = MockServiceProvider<WearhterService>(result: .success(mockWeatherDetailsSucccessResponseData(), HTTPURLResponse()))
+        guard let model = try? JSONDecoder().decode(WeatherInfo.self, from: mockWeatherDetailsSucccessResponseData()) else { return }
+        mockService = MockServiceProvider<WearhterService, WeatherInfo>(result: .success(model, HTTPURLResponse()))
         viewModel = WeatherInfoViewModel(provider: mockService)
     }
     

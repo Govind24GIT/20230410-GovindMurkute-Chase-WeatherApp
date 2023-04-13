@@ -28,14 +28,13 @@ class SearchViewModel {
         }
         isLoading = true
         
-        provider.load(service: .geoSearch(city: text)) { [weak self] result in
+        provider.load(type: [GeoLocationModel].self, service: .geoSearch(city: text)) { [weak self] result in
             
             guard let self = self else { return }
             switch result {
                 
             case .success(let data, _):
-                let decoder = JSONDecoder()
-                self.geoLocationList = try? decoder.decode([GeoLocationModel].self, from: data)
+                self.geoLocationList = data
                 self.isLoading = false
                 self.errorMessage = nil
 
